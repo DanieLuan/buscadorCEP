@@ -1,0 +1,35 @@
+    .container {
+        height: 60vh;
+        width: 60vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        flex-direction: column;
+
+        background-color: white;
+        gap: 15%;
+        border-radius: 25px;
+        
+
+    }
+
+    .containerInput {
+        
+    }
+
+    .main {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+        
+        border: 1px solid black;
+        border-radius: 15px;
+        height: 120px;
+        padding: 20px;
+    }
+    .main h2 {
+        text-align: center;
+        
+    }
