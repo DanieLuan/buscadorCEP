@@ -1,14 +1,20 @@
     .container {
-        height: 40vh;
-        width: 40vw;
+        height: 500px;
+        width: 75vw;
+        max-width: 600px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
         background-color: rgb(74, 74, 74);
         color: white;
         border-radius: 25px;
-        gap: 20px;
+        
+    }
+
+    .container h1 {
+        font-size: 40px;
+        text-align: center;
     }
 
     .containerInput {
@@ -16,18 +22,25 @@
         background-color: rgb(41, 41, 41);
         border-radius: 6px;
         height: 12%;
+        width: 200px;
     }
+    /*remove arrows up/down from the number's input*/
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+    } 
+
     .buttonSearch {
         background-color: transparent;
         border: 0;
         padding: 8px;
         cursor: pointer;
-
         transition: transform 0.5s;
     }
     .buttonSearch:hover {
         transform: scale(1.2);
     }
+
     .inputText {
         background-color: transparent;
         padding: 10px;
@@ -35,6 +48,7 @@
         color: white;
         font-size: 18px;
         outline: 0;
+        max-width: 70%;
     }
 
     .main {
@@ -44,10 +58,25 @@
         font-size: 22px;
         background-color: rgb(60, 60, 60);
         border-radius: 15px;
-        height: 120px;
-        padding: 5% 12%;
+        height: 160px;
+        width: 35vw;
+        max-width: 180px;
+        padding: 5vh 5vw;
+        
     }
     .main h2 {
         text-align: center;
-        
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width : 530px) {
+        .container {
+            height: 80vh;
+            width: 90vw;
+        }
+        .main {
+            height: 25vh;
+            width: 240px;
+        }
     }

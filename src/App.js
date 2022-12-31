@@ -1,13 +1,28 @@
 import { useState } from 'react';
 import {FiSearch} from 'react-icons/fi';
 import './styles.css';
+import api from './services/api'
 
 function App() {
 
   const [input, setInput] = useState('');
+  const [cep, setCep] = useState({});
 
-  function handleSearch(){
-    console.log("CLICO KKKKKK " + input);
+  async function handleSearch(){
+    //59149193/json
+    
+    if(input === ''){
+      alert("Preencha algum CEP!");
+      return;
+    }
+    try {
+      const response = await api.get(`${input}/json`);
+      setCep(response.data);
+      setInput("");
+    } catch {
+      alert("CEP NOT FOUND")
+      setInput("");
+    }
   }
 
   return (
@@ -16,14 +31,12 @@ function App() {
     <h1 className="title">Buscador CEP</h1>
 
       <div className='containerInput'>
-        
-
         <input
           className='inputText'
           type="number"
           placeholder = "Insira o seu CEP"
           value={input}
-          onChange={ (e) => setInput(e.target.value) }
+          onChange={ (event) => setInput(event.target.value) }
         />
 
         <button className="buttonSearch" onClick={handleSearch}>
@@ -31,14 +44,16 @@ function App() {
         </button>
       </div>
       
-      <main className='main'>
-        <h2>CEP 59149-193</h2>
-
-        <span>Rua José Ferreira de Lima</span>
-        <span>Emaús</span>
-        <span>Parnamirim</span>
-        <span>RN</span>
-      </main>
+      {Object.keys(cep).length > 0 && (
+        <main className='main'>
+          <h2>{cep.cep}</h2>
+          <span>{cep.logradouro}</span>
+          <span>{cep.bairro}</span>
+          <span>{cep.localidade}</span>
+          <span>{cep.uf}</span>
+        </main>
+      )}
+      
 
     </div>
 
