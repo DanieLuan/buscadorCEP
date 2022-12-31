@@ -1,33 +1,51 @@
     .container {
-        height: 60vh;
-        width: 60vw;
+        height: 40vh;
+        width: 40vw;
         display: flex;
         align-items: center;
         justify-content: center;
-        
         flex-direction: column;
-
-        background-color: white;
-        gap: 15%;
+        background-color: rgb(74, 74, 74);
+        color: white;
         border-radius: 25px;
-        
-
+        gap: 20px;
     }
 
     .containerInput {
-        
+        display: flex;
+        background-color: rgb(41, 41, 41);
+        border-radius: 6px;
+        height: 12%;
+    }
+    .buttonSearch {
+        background-color: transparent;
+        border: 0;
+        padding: 8px;
+        cursor: pointer;
+
+        transition: transform 0.5s;
+    }
+    .buttonSearch:hover {
+        transform: scale(1.2);
+    }
+    .inputText {
+        background-color: transparent;
+        padding: 10px;
+        border: 0;
+        color: white;
+        font-size: 18px;
+        outline: 0;
     }
 
     .main {
         display: flex;
-
         flex-direction: column;
         justify-content: center;
-        
-        border: 1px solid black;
+        font-size: 22px;
+        background-color: rgb(60, 60, 60);
         border-radius: 15px;
         height: 120px;
-        padding: 20px;
+        padding: 5% 12%;
     }
     .main h2 {
         text-align: center;
