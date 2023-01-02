@@ -9,7 +9,6 @@ function App() {
   const [cep, setCep] = useState({});
 
   async function handleSearch(){
-    //59149193/json
     
     if(input === ''){
       alert("Preencha algum CEP!");
@@ -43,16 +42,18 @@ function App() {
           <FiSearch size={25} color="#FFF"/>
         </button>
       </div>
-      
+      <main className='main'>
       {Object.keys(cep).length > 0 && (
-        <main className='main'>
+        <div className='main-info'>
           <h2>{cep.cep}</h2>
           <span>{cep.logradouro}</span>
           <span>{cep.bairro}</span>
           <span>{cep.localidade}</span>
           <span>{cep.uf}</span>
-        </main>
+        </div>
       )}
+      </main>
+      
       
 
     </div>

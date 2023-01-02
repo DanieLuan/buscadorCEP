@@ -59,9 +59,9 @@
         background-color: rgb(60, 60, 60);
         border-radius: 15px;
         height: 160px;
-        width: 35vw;
-        max-width: 180px;
-        padding: 5vh 5vw;
+        width: 40vw;
+        max-width: 300px;
+        padding: 5vh 2vw;
         
     }
     .main h2 {
@@ -69,10 +69,15 @@
         font-size: 26px;
         margin-bottom: 10px;
     }
+    .main-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 
     @media (max-width : 530px) {
         .container {
-            height: 80vh;
+            height: 65vh;
             width: 90vw;
         }
         .main {
